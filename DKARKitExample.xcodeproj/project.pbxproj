@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F480BACA207F358000E99659 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F480BAC9207F358000E99659 /* AppDelegate.m */; };
+		F480BACF207F358000E99659 /* DKARPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F480BACE207F358000E99659 /* DKARPlayerController.m */; };
+		F480BAD2207F358000E99659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F480BAD0207F358000E99659 /* Main.storyboard */; };
+		F480BAD4207F358100E99659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F480BAD3207F358100E99659 /* Assets.xcassets */; };
+		F480BAD7207F358100E99659 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F480BAD5207F358100E99659 /* LaunchScreen.storyboard */; };
+		F480BADA207F358100E99659 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F480BAD9207F358100E99659 /* main.m */; };
+		F480BAE920804D8700E99659 /* DKRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F480BAE820804D8700E99659 /* DKRootViewController.m */; };
+		F480BAEC20804DB500E99659 /* DKRouterManger.m in Sources */ = {isa = PBXBuildFile; fileRef = F480BAEA20804DB500E99659 /* DKRouterManger.m */; };
+		F480BAF0208052FB00E99659 /* L3DWY888_800x600@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F480BAEF208052FB00E99659 /* L3DWY888_800x600@2x.jpg */; };
+		F480BB0720805E0500E99659 /* DKVideoPlayerManger.m in Sources */ = {isa = PBXBuildFile; fileRef = F480BAFF20805E0500E99659 /* DKVideoPlayerManger.m */; };
+		F480BB0A208077A300E99659 /* DKVideoPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = F480BB09208077A300E99659 /* DKVideoPlane.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F480BAC5207F358000E99659 /* DKARKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKARKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F480BAC8207F358000E99659 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F480BAC9207F358000E99659 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F480BACD207F358000E99659 /* DKARPlayerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKARPlayerController.h; sourceTree = "<group>"; };
+		F480BACE207F358000E99659 /* DKARPlayerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKARPlayerController.m; sourceTree = "<group>"; };
+		F480BAD1207F358000E99659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F480BAD3207F358100E99659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F480BAD6207F358100E99659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F480BAD8207F358100E99659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F480BAD9207F358100E99659 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F480BAE720804D8700E99659 /* DKRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRootViewController.h; sourceTree = "<group>"; };
+		F480BAE820804D8700E99659 /* DKRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRootViewController.m; sourceTree = "<group>"; };
+		F480BAEA20804DB500E99659 /* DKRouterManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRouterManger.m; sourceTree = "<group>"; };
+		F480BAEB20804DB500E99659 /* DKRouterManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRouterManger.h; sourceTree = "<group>"; };
+		F480BAED20804E3400E99659 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F480BAEF208052FB00E99659 /* L3DWY888_800x600@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "L3DWY888_800x600@2x.jpg"; sourceTree = "<group>"; };
+		F480BAFF20805E0500E99659 /* DKVideoPlayerManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKVideoPlayerManger.m; sourceTree = "<group>"; };
+		F480BB0020805E0500E99659 /* DKVideoPlayerManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKVideoPlayerManger.h; sourceTree = "<group>"; };
+		F480BB08208077A300E99659 /* DKVideoPlane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKVideoPlane.h; sourceTree = "<group>"; };
+		F480BB09208077A300E99659 /* DKVideoPlane.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKVideoPlane.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F480BAC2207F358000E99659 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F480BABC207F358000E99659 = {
+			isa = PBXGroup;
+			children = (
+				F480BAC7207F358000E99659 /* DKARKitExample */,
+				F480BAC6207F358000E99659 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F480BAC6207F358000E99659 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F480BAC5207F358000E99659 /* DKARKitExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F480BAC7207F358000E99659 /* DKARKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				F480BAEE208052EE00E99659 /* Resource */,
+				F480BAE720804D8700E99659 /* DKRootViewController.h */,
+				F480BAE820804D8700E99659 /* DKRootViewController.m */,
+				F480BAEB20804DB500E99659 /* DKRouterManger.h */,
+				F480BAEA20804DB500E99659 /* DKRouterManger.m */,
+				F480BAC8207F358000E99659 /* AppDelegate.h */,
+				F480BAC9207F358000E99659 /* AppDelegate.m */,
+				F480BACD207F358000E99659 /* DKARPlayerController.h */,
+				F480BACE207F358000E99659 /* DKARPlayerController.m */,
+				F480BB0020805E0500E99659 /* DKVideoPlayerManger.h */,
+				F480BAFF20805E0500E99659 /* DKVideoPlayerManger.m */,
+				F480BB08208077A300E99659 /* DKVideoPlane.h */,
+				F480BB09208077A300E99659 /* DKVideoPlane.m */,
+				F480BAD0207F358000E99659 /* Main.storyboard */,
+				F480BAD3207F358100E99659 /* Assets.xcassets */,
+				F480BAED20804E3400E99659 /* PrefixHeader.pch */,
+				F480BAD5207F358100E99659 /* LaunchScreen.storyboard */,
+				F480BAD8207F358100E99659 /* Info.plist */,
+				F480BAD9207F358100E99659 /* main.m */,
+			);
+			path = DKARKitExample;
+			sourceTree = "<group>";
+		};
+		F480BAEE208052EE00E99659 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F480BAEF208052FB00E99659 /* L3DWY888_800x600@2x.jpg */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F480BAC4207F358000E99659 /* DKARKitExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F480BADD207F358100E99659 /* Build configuration list for PBXNativeTarget "DKARKitExample" */;
+			buildPhases = (
+				F480BAC1207F358000E99659 /* Sources */,
+				F480BAC2207F358000E99659 /* Frameworks */,
+				F480BAC3207F358000E99659 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DKARKitExample;
+			productName = DKARKitExample;
+			productReference = F480BAC5207F358000E99659 /* DKARKitExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F480BABD207F358000E99659 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = DK;
+				TargetAttributes = {
+					F480BAC4207F358000E99659 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = F480BAC0207F358000E99659 /* Build configuration list for PBXProject "DKARKitExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F480BABC207F358000E99659;
+			productRefGroup = F480BAC6207F358000E99659 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F480BAC4207F358000E99659 /* DKARKitExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F480BAC3207F358000E99659 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F480BAF0208052FB00E99659 /* L3DWY888_800x600@2x.jpg in Resources */,
+				F480BAD7207F358100E99659 /* LaunchScreen.storyboard in Resources */,
+				F480BAD4207F358100E99659 /* Assets.xcassets in Resources */,
+				F480BAD2207F358000E99659 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F480BAC1207F358000E99659 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F480BACF207F358000E99659 /* DKARPlayerController.m in Sources */,
+				F480BADA207F358100E99659 /* main.m in Sources */,
+				F480BB0A208077A300E99659 /* DKVideoPlane.m in Sources */,
+				F480BAEC20804DB500E99659 /* DKRouterManger.m in Sources */,
+				F480BB0720805E0500E99659 /* DKVideoPlayerManger.m in Sources */,
+				F480BACA207F358000E99659 /* AppDelegate.m in Sources */,
+				F480BAE920804D8700E99659 /* DKRootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F480BAD0207F358000E99659 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F480BAD1207F358000E99659 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F480BAD5207F358100E99659 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F480BAD6207F358100E99659 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F480BADB207F358100E99659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F480BADC207F358100E99659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F480BADE207F358100E99659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DCF2LUV98W;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/DKARKitExample/PrefixHeader.pch";
+				INFOPLIST_FILE = DKARKitExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DoKeer.DKARKitExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F480BADF207F358100E99659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DCF2LUV98W;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/DKARKitExample/PrefixHeader.pch";
+				INFOPLIST_FILE = DKARKitExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DoKeer.DKARKitExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F480BAC0207F358000E99659 /* Build configuration list for PBXProject "DKARKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F480BADB207F358100E99659 /* Debug */,
+				F480BADC207F358100E99659 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F480BADD207F358100E99659 /* Build configuration list for PBXNativeTarget "DKARKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F480BADE207F358100E99659 /* Debug */,
+				F480BADF207F358100E99659 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F480BABD207F358000E99659 /* Project object */;
+}
