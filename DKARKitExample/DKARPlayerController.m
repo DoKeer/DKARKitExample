@@ -360,7 +360,7 @@ typedef NS_ENUM(NSInteger, DKARPanDirection){
     }
     // DKVideoPlaneHorizontal
     DKVideoPlane *videoGeometry = [DKVideoPlane planeWithType:DKVideoPlaneHorizontal width:0.1 length:0.1/videoScale];
-    videoGeometry.materials = @[self.materials[DKARPlayerMaterialTypeVideo]];
+    videoGeometry.materials = @[self.materials[DKARPlayerMaterialTypeBackground]];
 
     _videoNode = [SCNNode nodeWithGeometry:videoGeometry];
     //worldTransform 和 transform 的区别：worldTransform相对于根节点的旋转平移缩放矩阵，transform和position同时设置，共同作用与node的变换。

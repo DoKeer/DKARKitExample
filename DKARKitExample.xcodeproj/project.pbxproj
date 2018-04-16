@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F4086B062084598700BC6061 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F4086B052084598700BC6061 /* README.md */; };
+		F4086B0A2084AE0600BC6061 /* 0001.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F4086B092084AE0500BC6061 /* 0001.mp4 */; };
 		F480BACA207F358000E99659 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F480BAC9207F358000E99659 /* AppDelegate.m */; };
 		F480BACF207F358000E99659 /* DKARPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F480BACE207F358000E99659 /* DKARPlayerController.m */; };
 		F480BAD2207F358000E99659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F480BAD0207F358000E99659 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		F4086B052084598700BC6061 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F4086B092084AE0500BC6061 /* 0001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 0001.mp4; sourceTree = "<group>"; };
 		F480BAC5207F358000E99659 /* DKARKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKARKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F480BAC8207F358000E99659 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F480BAC9207F358000E99659 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		F480BAC7207F358000E99659 /* DKARKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				F4086B092084AE0500BC6061 /* 0001.mp4 */,
 				F480BAEE208052EE00E99659 /* Resource */,
 				F480BAE720804D8700E99659 /* DKRootViewController.h */,
 				F480BAE820804D8700E99659 /* DKRootViewController.m */,
@@ -166,6 +169,7 @@
 			files = (
 				F480BAF0208052FB00E99659 /* L3DWY888_800x600@2x.jpg in Resources */,
 				F480BAD7207F358100E99659 /* LaunchScreen.storyboard in Resources */,
+				F4086B0A2084AE0600BC6061 /* 0001.mp4 in Resources */,
 				F4086B062084598700BC6061 /* README.md in Resources */,
 				F480BAD4207F358100E99659 /* Assets.xcassets in Resources */,
 				F480BAD2207F358000E99659 /* Main.storyboard in Resources */,
