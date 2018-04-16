@@ -61,6 +61,8 @@ static const float VIDEO_PLAYBACK_CURRENT_POSITION = -1.0f;
 - (CVPixelBufferRef)getLastestSampleBuffer;
 
 - (MEDIA_STATE)getStatus;
+- (CGFloat)getVideoHeight;
+- (CGFloat)getVideoWidth;
 
 @end
 

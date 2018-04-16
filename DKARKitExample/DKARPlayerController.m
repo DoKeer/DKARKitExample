@@ -354,8 +354,12 @@ typedef NS_ENUM(NSInteger, DKARPanDirection){
     if (_videoNode) {
         return _videoNode;
     }
+    CGFloat videoScale = [_playerManger getVideoWidth]/[_playerManger getVideoHeight];
+    if (videoScale == 0 || videoScale == 1) {
+        videoScale = 16.0/9.0;
+    }
     // DKVideoPlaneHorizontal
-    DKVideoPlane *videoGeometry = [DKVideoPlane planeWithType:DKVideoPlaneHorizontal width:0.1 length:0.07];
+    DKVideoPlane *videoGeometry = [DKVideoPlane planeWithType:DKVideoPlaneHorizontal width:0.1 length:0.1/videoScale];
     videoGeometry.materials = @[self.materials[DKARPlayerMaterialTypeVideo]];
 
     _videoNode = [SCNNode nodeWithGeometry:videoGeometry];

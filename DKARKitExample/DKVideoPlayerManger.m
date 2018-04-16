@@ -188,7 +188,7 @@ static DKVideoPlayerManger *_shareInstance = nil;
     return mediaState;
 }
 
-- (int)getVideoHeight
+- (CGFloat)getVideoHeight
 {
     int ret = -1;
     
@@ -202,9 +202,9 @@ static DKVideoPlayerManger *_shareInstance = nil;
     return ret;
 }
 
-- (int)getVideoWidth
+- (CGFloat)getVideoWidth
 {
-    int ret = -1;
+    CGFloat ret = -1;
     if (NOT_READY > mediaState) {
         ret = videoSize.width;
     }
@@ -296,7 +296,7 @@ static DKVideoPlayerManger *_shareInstance = nil;
 {
     BOOL ret = YES;
     self.asset = [AVURLAsset assetWithURL:url];
-    mediaState = READY;
+    
     [self prepareAVPlayer];
     
     return ret;
@@ -306,10 +306,10 @@ static DKVideoPlayerManger *_shareInstance = nil;
 {
     // Create a player item
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:_asset];
+    
     // use videoOutput
     NSDictionary *settings = @{(id) kCVPixelBufferPixelFormatTypeKey : @(kCVPixelFormatType_32BGRA)};
     self.videoOutput = [[AVPlayerItemVideoOutput alloc] initWithPixelBufferAttributes:settings];
-    
     [playerItem addOutput:self.videoOutput];
     
     // Add player item status KVO observer
@@ -348,17 +348,65 @@ static DKVideoPlayerManger *_shareInstance = nil;
     self.timeObserve = [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(1, 1) queue:nil usingBlock:^(CMTime time){
         AVPlayerItem *currentItem = [weakSelf.player currentItem];
         NSArray *loadedRanges = currentItem.seekableTimeRanges;
+        
+        // 加载成功后会回调 这里可以获取视频码率，长宽等数据。
+        [weakSelf bufferInfoWithTracks:currentItem.tracks];
+
         if (loadedRanges.count > 0 && currentItem.duration.timescale != 0) {
             NSInteger currentTime = (NSInteger)CMTimeGetSeconds([currentItem currentTime]);
             CGFloat totalTime     = (CGFloat)currentItem.duration.value / currentItem.duration.timescale;
             CGFloat value         = CMTimeGetSeconds([currentItem currentTime]) / totalTime;
-            self->videoLengthSeconds =  totalTime * TIMESCALE;
             
             if ([weakSelf.delegate respondsToSelector:@selector(videoPlayCurrentTime:totalTime:progressValue:)]) {
                 [weakSelf.delegate videoPlayCurrentTime:currentTime totalTime:totalTime progressValue:value];
             }
         }
     }];
+}
+
+- (void)bufferInfoWithTracks:(NSArray <AVPlayerItemTrack *> *)tracks
+{
+    if (tracks.count > 0) {
+        [tracks enumerateObjectsUsingBlock:^(AVPlayerItemTrack * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj.assetTrack.mediaType isEqualToString:AVMediaTypeVideo]) {
+                if (self->mediaState == NOT_READY) {
+                    self->mediaState = READY;
+                }
+                // 解析视频尺寸
+                self->videoSize = [obj.assetTrack naturalSize];
+                self->videoLengthSeconds = CMTimeGetSeconds([obj.assetTrack.asset duration]);
+                self->videoFrameRate = [obj.assetTrack nominalFrameRate];
+            }
+            [self descriptVideoTrackInfo:obj.assetTrack];
+        }];
+    }
+    
+}
+
+- (void)descriptVideoTrackInfo:(AVAssetTrack *)track
+{
+    NSLog(@" -------------------------------------------- ");
+    
+    NSLog(@"trackVideo = %@",track);
+    NSLog(@"trackVideoSize = %f--%f",videoSize.width,videoSize.height);
+    NSLog(@"trackVideoSec = %f",videoLengthSeconds);
+    NSLog(@"trackVideoFrameRate = %f",videoFrameRate);
+    NSLog(@"trackVideo mediaType = %@",track.mediaType);
+    NSLog(@"trackVideo formatDescriptions = %@",track.formatDescriptions);
+    NSLog(@"trackVideo playable = %d",track.playable);
+    NSLog(@"trackVideo decodable = %d",track.decodable);
+    NSLog(@"trackVideo totalSampleDataLength = %lld",track.totalSampleDataLength);
+    NSLog(@"trackVideo languageCode = %@",track.languageCode);
+    NSLog(@"trackVideo mediaType = %f  -- %f",CMTimeGetSeconds(track.timeRange.start),CMTimeGetSeconds(track.timeRange.duration));
+    
+    NSLog(@"trackVideo segments = %@",track.segments);
+    NSLog(@"trackVideo commonMetadata = %@",track.commonMetadata);
+    NSLog(@"trackVideo metadata = %@",track.metadata);
+    NSLog(@"trackVideo availableMetadataFormats = %@",track.availableMetadataFormats);
+    NSLog(@"trackVideo availableTrackAssociationTypes = %@",track.availableTrackAssociationTypes);
+    
+    NSLog(@" -------------------------------------------- ");
+    
 }
 
 // Video frame pump timer callback
@@ -595,7 +643,7 @@ static DKVideoPlayerManger *_shareInstance = nil;
         }
         self->mediaState = READY;
         [self playPosition:0];
-
+        
     });
 }
 
@@ -609,7 +657,10 @@ static DKVideoPlayerManger *_shareInstance = nil;
                        context:(void*)context
 {
     if ([keyPath isEqualToString:kloadedTimeRangesKey]) {
-        
+        if (mediaState == NOT_READY) {
+            mediaState = READY;
+        }
+
         // 计算缓冲进度
         NSTimeInterval timeInterval = [self availableDuration];
         CMTime duration             = [_player currentItem].duration;
@@ -620,7 +671,7 @@ static DKVideoPlayerManger *_shareInstance = nil;
         
         // 当缓冲是空的时候
         if ([_player currentItem].playbackBufferEmpty) {
-//            [self bufferingSomeSecond];
+            //            [self bufferingSomeSecond];
         }
         
     } else if ([keyPath isEqualToString:kplaybackLikelyToKeepUpKey]) {
