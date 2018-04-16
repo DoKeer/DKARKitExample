@@ -239,6 +239,6 @@ ARReferenceImage 是识别图像的模型类，提供了三个创建方法。ini
 
 - SCNText没有正确显示到scene中
 
-有不明白的欢迎讨论。[本篇demo](https://github.com/DoKeer/DKARKitExample.git)
+有不明白的欢迎讨论。[博客地址](https://www.jianshu.com/u/0b058f2513f1)
 
 
