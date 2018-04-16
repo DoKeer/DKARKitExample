@@ -10,6 +10,7 @@
 #import <SceneKit/SceneKit.h>
 #import <ARKit/ARKit.h>
 
+#define TrackImage @"L3DWY888_800x600@2x.jpg"
 @interface DKARPlayerController : UIViewController
 
 @end

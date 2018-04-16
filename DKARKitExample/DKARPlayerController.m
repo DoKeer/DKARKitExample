@@ -291,7 +291,7 @@ typedef NS_ENUM(NSInteger, DKARPanDirection){
 //            _arConfig.planeDetection = ARPlaneDetectionHorizontal | ARPlaneDetectionVertical;
 
             NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-            NSString *filePath = [resourcePath stringByAppendingPathComponent:@"L3DWY888_800x600@2x.jpg"];
+            NSString *filePath = [resourcePath stringByAppendingPathComponent:TrackImage];
             _deImage = [UIImage imageWithContentsOfFile:filePath];
             
             //iOS 11.3 新特性之二: ARReferenceImage API_AVAILABLE(ios(11.3))
