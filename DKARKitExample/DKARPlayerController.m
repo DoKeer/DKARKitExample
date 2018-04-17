@@ -138,7 +138,6 @@ typedef NS_ENUM(NSInteger, DKARPanDirection){
 #pragma mark control
 - (void)play
 {
-    _shouldPlay = YES;
     [self.playerManger playPosition:0];
     [self.btnPlayNodel removeFromParentNode];
     self.videoNode.geometry.materials = @[self.materials[DKARPlayerMaterialTypeVideo]];
@@ -147,7 +146,6 @@ typedef NS_ENUM(NSInteger, DKARPanDirection){
 
 - (void)pause
 {
-    _shouldPlay = NO;
     [self.playerManger pause];
     [self resetNodeMaterial];
 }
@@ -167,7 +165,7 @@ typedef NS_ENUM(NSInteger, DKARPanDirection){
             // 使用绝对值来判断移动的方向
             CGFloat x = fabs(veloctyPoint.x);
             CGFloat y = fabs(veloctyPoint.y);
-            if (x > y) { // 水平移动
+            if (x > y && _shouldPlay) { // 水平移动
                 self.panDirection = DKARPanDirectionHorizontalMoved;
                 CMTime time       = self.playerManger.player.currentTime;
                 self.sumTime      = time.value/time.timescale;
@@ -177,7 +175,9 @@ typedef NS_ENUM(NSInteger, DKARPanDirection){
         case UIGestureRecognizerStateChanged: {
             switch (self.panDirection) {
                 case DKARPanDirectionHorizontalMoved:{
-                    [self horizontalMoved:veloctyPoint.x];
+                    if (_shouldPlay) {
+                        [self horizontalMoved:veloctyPoint.x];
+                    }
                     break;
                 }
                 default:
@@ -188,7 +188,9 @@ typedef NS_ENUM(NSInteger, DKARPanDirection){
         case UIGestureRecognizerStateEnded: {
             switch (self.panDirection) {
                 case DKARPanDirectionHorizontalMoved:{
-                    [self.playerManger seekTo:self.sumTime];
+                    if (_shouldPlay) {
+                        [self.playerManger seekTo:self.sumTime];
+                    }
                     self.sumTime = 0;
                     break;
                 }
@@ -367,14 +369,12 @@ typedef NS_ENUM(NSInteger, DKARPanDirection){
     SCNMatrix4 transM = SCNMatrix4FromMat4(anchor.transform);
     _videoNode.worldTransform = transM;
     printMatrix(&transM.m11);
-    if (!_shouldPlay) {
-        // Player play Button Node
-        DKVideoPlane *btnPlan = [DKVideoPlane planeWithType:DKVideoPlaneHorizontal width:0.03 length:0.03];
-        btnPlan.materials = @[self.materials[DKARPlayerMaterialTypePlay]];
-        self.btnPlayNodel = [SCNNode nodeWithGeometry:btnPlan];
-        [_videoNode addChildNode:_btnPlayNodel];
-    }
-   
+    // Player play Button Node
+    DKVideoPlane *btnPlan = [DKVideoPlane planeWithType:DKVideoPlaneHorizontal width:0.03 length:0.03];
+    btnPlan.materials = @[self.materials[DKARPlayerMaterialTypePlay]];
+    self.btnPlayNodel = [SCNNode nodeWithGeometry:btnPlan];
+    [_videoNode addChildNode:_btnPlayNodel];
+    _shouldPlay = YES;
     return _videoNode;
 }
 
